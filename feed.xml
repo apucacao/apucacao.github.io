@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Albatross</title>
+  <subtitle>by Alexis Georges</subtitle>
+  <id>http://albatross.io/</id>
+  <link href="http://albatross.io/"/>
+  <link href="http://albatross.io/feed.xml" rel="self"/>
+  <updated>2012-12-19T00:00:00-08:00T00:00:00-08:00</updated>
+  <author>
+    <name>Alexis Georges</name>
+  </author>
+  <entry>
+    <title>Further Up Yonder</title>
+    <link rel="alternate" href="/further-up-yonder/"/>
+    <id>/further-up-yonder/</id>
+    <published>2012-12-19T00:00:00-08:00T00:00:00-08:00</published>
+    <updated>2012-12-19T00:00:00-08:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;As we orbit the planet every 90 minutes, we see a world without borders, and send out a wish to all
+nations who have worked toward peace and harmony.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <title>The Most Astounding Fact</title>
+    <link rel="alternate" href="/most-astounding-fact/"/>
+    <id>/most-astounding-fact/</id>
+    <published>2012-07-03T00:00:00-07:00T00:00:00-08:00</published>
+    <updated>2012-07-03T00:00:00-07:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;We are part of this universe; we are in this universe, but perhaps more
+important than both of those facts, is that the universe is in us.
+&lt;cite&gt;&amp;ndash; Neil deGrasse Tyson&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Diana Nyad: Extreme swimming</title>
+    <link rel="alternate" href="/diana-nyad-extreme-swimming/"/>
+    <id>/diana-nyad-extreme-swimming/</id>
+    <published>2012-05-15T00:00:00-07:00T00:00:00-08:00</published>
+    <updated>2012-05-15T00:00:00-07:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;So what is it? What is it you&amp;rsquo;re doing with this one wild and precious life of yours?
+&lt;cite&gt;&amp;ndash; Diana Nyad paraphrasing Mary Oliver&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Module pattern</title>
+    <link rel="alternate" href="/module-pattern/"/>
+    <id>/module-pattern/</id>
+    <published>2012-05-07T00:00:00-07:00T00:00:00-08:00</published>
+    <updated>2012-05-07T00:00:00-07:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;p&gt;This simple pattern is extremely powerful. You can use it to create entirely independent
+building-blocks for your application, all while minimizing global namespace pollution.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s start with a simple example, and define a &lt;code&gt;queue&lt;/code&gt; module which provides four operations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;init(items)&lt;/code&gt;: populate the queue with some data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;enqueue(item)&lt;/code&gt;: add a new item to the back of the queue&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dequeue&lt;/code&gt;: remove an item from the front of the queue&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;size&lt;/code&gt;: return the current size of the queue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We start by writing an anonymous &lt;a title="Immediately-Invoked Function Expression (IIFE) by Ben Alman" href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/"&gt;immediately-invoked function expression&lt;/a&gt; (IIFE) which returns
+an object.&lt;/p&gt;
+&lt;div class="highlight javascript"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;pre class="lineno"&gt;2&lt;/pre&gt;&lt;pre class="lineno"&gt;3&lt;/pre&gt;&lt;pre class="lineno"&gt;4&lt;/pre&gt;&lt;pre class="lineno"&gt;5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;queue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{};&lt;/span&gt;
+
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}());&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our queue will will be based on top of a native &lt;code&gt;Array&lt;/code&gt;, so let&amp;rsquo;s define one. &lt;code&gt;data&lt;/code&gt; will be
+accessible to all functions within our module:&lt;/p&gt;
+&lt;div class="highlight javascript"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;pre class="lineno"&gt;2&lt;/pre&gt;&lt;pre class="lineno"&gt;3&lt;/pre&gt;&lt;pre class="lineno"&gt;4&lt;/pre&gt;&lt;pre class="lineno"&gt;5&lt;/pre&gt;&lt;pre class="lineno"&gt;6&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;queue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{};&lt;/span&gt;
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[];&lt;/span&gt;
+
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}());&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And now we can define our functions and assign them to properties of the &lt;code&gt;mod&lt;/code&gt; object.&lt;/p&gt;
+&lt;div class="highlight javascript"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;pre class="lineno"&gt;2&lt;/pre&gt;&lt;pre class="lineno"&gt;3&lt;/pre&gt;&lt;pre class="lineno"&gt;4&lt;/pre&gt;&lt;pre class="lineno"&gt;5&lt;/pre&gt;&lt;pre class="lineno"&gt;6&lt;/pre&gt;&lt;pre class="lineno"&gt;7&lt;/pre&gt;&lt;pre class="lineno"&gt;8&lt;/pre&gt;&lt;pre class="lineno"&gt;9&lt;/pre&gt;&lt;pre class="lineno"&gt;10&lt;/pre&gt;&lt;pre class="lineno"&gt;11&lt;/pre&gt;&lt;pre class="lineno"&gt;12&lt;/pre&gt;&lt;pre class="lineno"&gt;13&lt;/pre&gt;&lt;pre class="lineno"&gt;14&lt;/pre&gt;&lt;pre class="lineno"&gt;15&lt;/pre&gt;&lt;pre class="lineno"&gt;16&lt;/pre&gt;&lt;pre class="lineno"&gt;17&lt;/pre&gt;&lt;pre class="lineno"&gt;18&lt;/pre&gt;&lt;pre class="lineno"&gt;19&lt;/pre&gt;&lt;pre class="lineno"&gt;20&lt;/pre&gt;&lt;pre class="lineno"&gt;21&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;queue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{},&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[];&lt;/span&gt;
+
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;enqueue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;enqueue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;o&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;o&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;dequeue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;dequeue&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;shift&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;init&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;items&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;items&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;forEach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;enqueue&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;};&lt;/span&gt;
+
+  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}());&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;JavaScript does not have block scope, only function scope: the scope of a variable is limited to the
+function it is defined in. So in the example, &lt;code&gt;data&lt;/code&gt; is essentially hidden from the environment, but
+accessible to the functions in our module. (When speaking of our module functions, we say that &lt;code&gt;data&lt;/code&gt;
+is a &lt;em&gt;free&lt;/em&gt; variable because it is neither a local variable nor an argument.)&lt;/p&gt;
+
+&lt;p&gt;By returning the object we create closures. What this means is that the module functions
+will keep a reference to &lt;code&gt;data&lt;/code&gt; even after the IIFE returns. We have effectively made &lt;code&gt;data&lt;/code&gt; private.&lt;/p&gt;
+
+&lt;p&gt;You may want to read more about &lt;a title="Functions on MDN" href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function"&gt;functions&lt;/a&gt; on MDN, and &lt;a title="Closures explained with JavaScript by Nick Morgan" href="http://skilldrick.co.uk/2011/04/closures-explained-with-javascript/"&gt;closures&lt;/a&gt; in this
+article by Nick Morgan.&lt;/p&gt;
+
+&lt;p&gt;Here is how you could use our queue:&lt;/p&gt;
+&lt;div class="highlight javascript"&gt;&lt;table style="border-spacing: 0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl" style="text-align: right"&gt;&lt;pre class="lineno"&gt;1&lt;/pre&gt;&lt;pre class="lineno"&gt;2&lt;/pre&gt;&lt;pre class="lineno"&gt;3&lt;/pre&gt;&lt;pre class="lineno"&gt;4&lt;/pre&gt;&lt;pre class="lineno"&gt;5&lt;/pre&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre&gt;&lt;span class="nx"&gt;queue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;init&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+&lt;span class="nx"&gt;queue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;// 5
+&lt;/span&gt;&lt;span class="nx"&gt;queue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;enqueue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;3.14&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nx"&gt;queue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;dequeue&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// 1
+&lt;/span&gt;&lt;span class="nx"&gt;queue&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;size&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// 5
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;There are a few variations of the module pattern, which &lt;a title="JavaScript Module Pattern: In-Depth by Ben Cherry" href="http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth"&gt;Ben Cherry explores in great detail&lt;/a&gt;;
+Addy Osmani also &lt;a title="Module Pattern, Essential JavaScript &amp;amp; jQuery Design Patterns by Addy Osmani" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript"&gt;talks about it&lt;/a&gt; in his &lt;em&gt;fantastic&lt;/em&gt; book on design patterns.&lt;/p&gt;
+
+&lt;h2&gt;Note&lt;/h2&gt;
+
+&lt;p&gt;In the code, notice how module functions are assigned to a property of &lt;code&gt;mod&lt;/code&gt; but also to a local variable. As
+I explain above, variables declared inside the module are private, so users of our module can only call
+our functions through properties of the &lt;code&gt;queue&lt;/code&gt;. Doing it this way means you can invoke functions by name
+directly, instead of having to go through the property to which it is assigned.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Bruce Lee: Lost interview</title>
+    <link rel="alternate" href="/bruce-lee-lost-interview/"/>
+    <id>/bruce-lee-lost-interview/</id>
+    <published>2012-04-29T00:00:00-07:00T00:00:00-08:00</published>
+    <updated>2012-04-29T00:00:00-07:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Empty your mind, be formless, shapeless, like water. You put water into a cup, it becomes the cup. You put water into a bottle, it becomes the bottle. You put it in a tea pot, it becomes the teapot. Now water can flow, or it can crash&amp;hellip; Be water, my friend.
+&lt;cite&gt;&amp;ndash; Bruce Lee&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Headspace</title>
+    <link rel="alternate" href="/headspace/"/>
+    <id>/headspace/</id>
+    <published>2012-03-07T00:00:00-08:00T00:00:00-08:00</published>
+    <updated>2012-03-07T00:00:00-08:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;p&gt;Recently, &lt;a title="Michael Martin – Designer" href="http://michaelmartin.ca"&gt;Mike&lt;/a&gt; and I have been talking about building a little app
+to help us keep track of all the links we share with each other daily.&lt;/p&gt;
+
+&lt;p&gt;We debated whether we should simply use &lt;a title="Pinboard" href="http://pinboard.in"&gt;Pinboard&lt;/a&gt; or &lt;a title="Delicious" href="http://delicious.com"&gt;Delicious&lt;/a&gt;, but we decided to build our own as a way &lt;em&gt;learn&lt;/em&gt;. It&amp;rsquo;s one thing to read about new techniques and tools, but learning to use them appropriately can only come with practice. It&amp;rsquo;s easy to take things for granted.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Headspace: starred links" src="/images/headspace-7b6dca14.png" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Building blocks&lt;/h2&gt;
+
+&lt;p&gt;The back end was built with &lt;a title="Sinatra: A DSL for creating web applications in Ruby" href="http://www.sinatrarb.com/"&gt;Sinatra&lt;/a&gt;. It&amp;rsquo;s simple, flexible and fun. It provides a powerful DSL for defining routes (ie. HTTP endpoints), and leaves the rest up to me. I do not believe I have reached the point where I can comfortably hand off control to a big framework quite yet. Also, the &lt;a title="Sinatra on GitHub" href="https://github.com/sinatra/sinatra"&gt;source&lt;/a&gt; is very readable and the community is awesome: that&amp;rsquo;s great because I can quickly look behind the covers (and discover some new Ruby tricks).&lt;/p&gt;
+
+&lt;p&gt;Data is stored on &lt;a title="PostgreSQL" href="http://www.postgresql.org/"&gt;PostgreSQL&lt;/a&gt;. I am using &lt;a title="Sequel" href="http://sequel.rubyforge.org/"&gt;Sequel&lt;/a&gt;, a flexible database toolkit/ORM, to work with the data directly from Ruby. It&amp;rsquo;s very easy to setup, the documentation is excellent, and Jeremy Evans (the creator) is usually available for discussion on IRC.&lt;/p&gt;
+
+&lt;p&gt;Because we couldn&amp;rsquo;t be bothered with creating a new username and password, users authenticate using their Google account. Most of the grunt work for this is handled by the &lt;a title="OmniAuth" href="https://github.com/intridea/omniauth"&gt;OmniAuth&lt;/a&gt; gem, which makes it a pinch to use any of the large OAuth providers out there.&lt;/p&gt;
+
+&lt;p&gt;The last piece of the puzzle is a simple API for accessing links, built to integrate seamlessly with &lt;a title="Backbone.js" href="http://documentcloud.github.com/backbone/"&gt;Backbone&lt;/a&gt;. I recently worked on a large &lt;a title="Dojo" href="http://dojotoolkit.org/"&gt;Dojo&lt;/a&gt; project at work, and was curious about Backbone, which provides a simple and flexible structure for web applications. When I started with Dojo, I wished there were a few more hints or guidelines for organizing large Javascript applications. Thankfully there are &lt;a title="Patterns For Large-Scale JavaScript Application Architecture by Addy Osmani" href="http://addyosmani.com/largescalejavascript/"&gt;many&lt;/a&gt; &lt;a title="Essential JavaScript Design Patterns by Addy Osmani" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/"&gt;great&lt;/a&gt; &lt;a title="Scalable JavaScript Application Architecture by Nicholas Zakas" href="http://www.slideshare.net/nzakas/scalable-javascript-application-architecture"&gt;resources&lt;/a&gt; &lt;a title="Lessons from a Rewrite by Rebecca Murphey" href="http://rmurphey.com/blog/2011/07/06/lessons-from-a-rewrite/"&gt;available&lt;/a&gt;. And let&amp;rsquo;s not forget that Backbone&amp;rsquo;s documentation is excellent and the community is very constructive and helpful.&lt;/p&gt;
+
+&lt;p&gt;The entire UI is built on the client, using &lt;a title="Underscore.js" href="http://documentcloud.github.com/backbone/"&gt;Underscore&lt;/a&gt; templates. This is extremely convenient. No more building HTML using concatenation.&lt;/p&gt;
+
+&lt;p&gt;Working with Dojo also exposed me to AMD (Asynchronous Module Definition). I recommend reading &lt;a title="RequireJS: Why Web Modules?" href="http://requirejs.org/docs/why.html"&gt;&amp;ldquo;Why Web Modules?&amp;rdquo;&lt;/a&gt; and &lt;a title="RequireJS: Why AMD?" href="http://requirejs.org/docs/whyamd.html"&gt;&amp;ldquo;Why AMD?&amp;rdquo;&lt;/a&gt;, as well as Addy Osmani&amp;rsquo;s &lt;a title="Writing Modular JavaScript With AMD, CommonJS &amp;amp; ES Harmony by Addy Osmani" href="http://addyosmani.com/writing-modular-js/"&gt;excellent article&lt;/a&gt; on the subject. For this project I used &lt;a title="RequireJS" href="http://requirejs.org/"&gt;RequireJS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Organizing code into modules is essential for any application. I remember writing monolithic spaghetti JavaScript code and how painful it was to maintain. Even though splitting such a piece of code across multiple files helped, making sure the order among these &amp;ldquo;modules&amp;rdquo; remained coherent was painful. And while using a script loader currently introduces a dependency, I found the gain in clarity and maintainability to be well worth the extra step.&lt;/p&gt;
+
+&lt;p&gt;As a side note, RequireJS provides an optimizer (r.js) to concatenate and minimize all the modules into one file for production (great for reducing bandwidth usage). Setting up a build is straightforward and &lt;a title="RequireJS: Optimization" href="http://requirejs.org/docs/optimization.html"&gt;well documented&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;One Step Forward&lt;/h2&gt;
+
+&lt;p&gt;I deployed Headspace on a Sunday, and on Monday we already had 5 new ideas. This was probably the most rewarding part in all of this: using something we&amp;rsquo;ve created and discovering new things we could do with it.&lt;/p&gt;
+
+&lt;p&gt;There are already many things that I am in the progress of rewriting to accommodate new features. Being able to quickly iterate is key to making Headspace useful for us.&lt;/p&gt;
+
+&lt;p&gt;I have a beta instance running &lt;a title="Headspace" href="http://headspace.squid.io"&gt;here&lt;/a&gt;, and you can also check out the &lt;a title="Headspace on GitHub" href="https://github.com/apucacao/headspace"&gt;source&lt;/a&gt;. Feel free to share any comments or suggestions.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Enivrez-vous</title>
+    <link rel="alternate" href="/enivrez-vous/"/>
+    <id>/enivrez-vous/</id>
+    <published>2012-02-26T00:00:00-08:00T00:00:00-08:00</published>
+    <updated>2012-02-26T00:00:00-08:00T00:00:00-08:00</updated>
+    <author>
+      <name>Alexis Georges</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img title="Enivrez-vous, at Third Beach" src="/images/enivrez-vous-a73949d5.png" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Il faut être toujours ivre. Tout est là : c’est l’unique question. Pour ne pas sentir l’horrible fardeau du Temps qui brise vos épaules et vous penche vers la terre, il faut vous enivrer sans trêve.&lt;/p&gt;
+
+&lt;p&gt;Mais de quoi ? De vin, de poésie ou de vertu, à votre guise. Mais enivrez-vous.&lt;/p&gt;
+
+&lt;p&gt;Et si quelquefois, sur les marches d’un palais, sur l’herbe verte d’un fossé, dans la solitude morne de votre chambre, vous vous réveillez, l’ivresse déjà diminuée ou disparue, demandez au vent, à la vague, à l’étoile, à l’oiseau, à l’horloge, à tout ce qui fuit, à tout ce qui gémit, à tout ce qui roule, à tout ce qui chante, à tout ce qui parle, demandez quelle heure il est ; et le vent, la vague, l’étoile, l’oiseau, l’horloge, vous répondront : « Il est l’heure de s’enivrer&amp;nbsp;! Pour n’être pas les esclaves martyrisés du Temps, enivrez-vous ; enivrez-vous sans cesse&amp;nbsp;! De vin, de poésie ou de vertu, à votre guise. »
+&lt;cite&gt;&amp;ndash; Charles Baudelaire, « Le Spleen de Paris : Petits poèmes en prose »&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+</feed>

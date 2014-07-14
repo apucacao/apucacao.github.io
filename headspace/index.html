@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexis Georges">
+    <meta name="description" content="Personal website">
+    <link href="/feed.xml" rel="alternate" title="Albatross" type="application/atom+xml">
+
+      <title>Headspace | Albatross</title>
+
+    <link href="/stylesheets/all-7e4c24e8.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/all-4cf1a050.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/pgm5ehr.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+
+  <body class="headspace headspace_index">
+    <div class="wrap">
+      <header role="banner">
+  <h1 class="mark"><a href="/">Albatross</a></h1>
+</header>
+        <article role="main">
+    <header>
+      <h1><a href="/headspace/">Headspace</a></h1>
+      <time>March  7 2012</time>
+    </header>
+
+
+
+    <p>Recently, <a title="Michael Martin – Designer" href="http://michaelmartin.ca">Mike</a> and I have been talking about building a little&nbsp;app
+to help us keep track of all the links we share with each other&nbsp;daily.</p>
+
+<p>We debated whether we should simply use <a title="Pinboard" href="http://pinboard.in">Pinboard</a> or <a title="Delicious" href="http://delicious.com">Delicious</a>, but we decided to build our own as a way <em>learn</em>. It&rsquo;s one thing to read about new techniques and tools, but learning to use them appropriately can only come with practice. It&rsquo;s easy to take things for&nbsp;granted.</p>
+
+<p><img title="Headspace: starred links" src="/images/headspace-7b6dca14.png" /></p>
+
+<h2>Building&nbsp;blocks</h2>
+
+<p>The back end was built with <a title="Sinatra: A DSL for creating web applications in Ruby" href="http://www.sinatrarb.com/">Sinatra</a>. It&rsquo;s simple, flexible and fun. It provides a powerful <span class="caps">DSL</span> for defining routes (ie. <span class="caps">HTTP</span> endpoints), and leaves the rest up to me. I do not believe I have reached the point where I can comfortably hand off control to a big framework quite yet. Also, the <a title="Sinatra on GitHub" href="https://github.com/sinatra/sinatra">source</a> is very readable and the community is awesome: that&rsquo;s great because I can quickly look behind the covers (and discover some new Ruby&nbsp;tricks).</p>
+
+<p>Data is stored on <a title="PostgreSQL" href="http://www.postgresql.org/">Postgre<span class="caps">SQL</span></a>. I am using <a title="Sequel" href="http://sequel.rubyforge.org/">Sequel</a>, a flexible database toolkit/<span class="caps">ORM</span>, to work with the data directly from Ruby. It&rsquo;s very easy to setup, the documentation is excellent, and Jeremy Evans (the creator) is usually available for discussion on&nbsp;<span class="caps">IRC.</span></p>
+
+<p>Because we couldn&rsquo;t be bothered with creating a new username and password, users authenticate using their Google account. Most of the grunt work for this is handled by the <a title="OmniAuth" href="https://github.com/intridea/omniauth">OmniAuth</a> gem, which makes it a pinch to use any of the large OAuth providers out&nbsp;there.</p>
+
+<p>The last piece of the puzzle is a simple <span class="caps">API</span> for accessing links, built to integrate seamlessly with <a title="Backbone.js" href="http://documentcloud.github.com/backbone/">Backbone</a>. I recently worked on a large <a title="Dojo" href="http://dojotoolkit.org/">Dojo</a> project at work, and was curious about Backbone, which provides a simple and flexible structure for web applications. When I started with Dojo, I wished there were a few more hints or guidelines for organizing large Javascript applications. Thankfully there are <a title="Patterns For Large-Scale JavaScript Application Architecture by Addy Osmani" href="http://addyosmani.com/largescalejavascript/">many</a> <a title="Essential JavaScript Design Patterns by Addy Osmani" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">great</a> <a title="Scalable JavaScript Application Architecture by Nicholas Zakas" href="http://www.slideshare.net/nzakas/scalable-javascript-application-architecture">resources</a> <a title="Lessons from a Rewrite by Rebecca Murphey" href="http://rmurphey.com/blog/2011/07/06/lessons-from-a-rewrite/">available</a>. And let&rsquo;s not forget that Backbone&rsquo;s documentation is excellent and the community is very constructive and&nbsp;helpful.</p>
+
+<p>The entire <span class="caps">UI</span> is built on the client, using <a title="Underscore.js" href="http://documentcloud.github.com/backbone/">Underscore</a> templates. This is extremely convenient. No more building <span class="caps">HTML</span> using&nbsp;concatenation.</p>
+
+<p>Working with Dojo also exposed me to <span class="caps">AMD</span> (Asynchronous Module Definition). I recommend reading <a title="RequireJS: Why Web Modules?" href="http://requirejs.org/docs/why.html">&ldquo;Why Web Modules?&rdquo;</a> and <a title="RequireJS: Why AMD?" href="http://requirejs.org/docs/whyamd.html">&ldquo;Why <span class="caps">AMD</span>?&rdquo;</a>, as well as Addy Osmani&rsquo;s <a title="Writing Modular JavaScript With AMD, CommonJS &amp; ES Harmony by Addy Osmani" href="http://addyosmani.com/writing-modular-js/">excellent article</a> on the subject. For this project I used <a title="RequireJS" href="http://requirejs.org/">Require<span class="caps">JS</span></a>.</p>
+
+<p>Organizing code into modules is essential for any application. I remember writing monolithic spaghetti JavaScript code and how painful it was to maintain. Even though splitting such a piece of code across multiple files helped, making sure the order among these &ldquo;modules&rdquo; remained coherent was painful. And while using a script loader currently introduces a dependency, I found the gain in clarity and maintainability to be well worth the extra&nbsp;step.</p>
+
+<p>As a side note, Require<span class="caps">JS</span> provides an optimizer (r.js) to concatenate and minimize all the modules into one file for production (great for reducing bandwidth usage). Setting up a build is straightforward and <a title="RequireJS: Optimization" href="http://requirejs.org/docs/optimization.html">well documented</a>.</p>
+
+<h2>One Step&nbsp;Forward</h2>
+
+<p>I deployed Headspace on a Sunday, and on Monday we already had 5 new ideas. This was probably the most rewarding part in all of this: using something we&rsquo;ve created and discovering new things we could do with&nbsp;it.</p>
+
+<p>There are already many things that I am in the progress of rewriting to accommodate new features. Being able to quickly iterate is key to making Headspace useful for&nbsp;us.</p>
+
+<p>I have a beta instance running <a title="Headspace" href="http://headspace.squid.io">here</a>, and you can also check out the <a title="Headspace on GitHub" href="https://github.com/apucacao/headspace">source</a>. Feel free to share any comments or&nbsp;suggestions.</p>
+
+  </article>
+
+      <footer role="contentinfo">
+  Copyright © 2014 Alexis Georges
+</footer>
+    </div>
+  </body>
+</html>
